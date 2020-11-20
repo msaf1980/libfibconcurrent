@@ -1,6 +1,6 @@
 #include <stdlib.h>
-
 #include <stdbool.h>
+#include <unistd.h>
 
 #include "mpmc_ring_queue_internal.h"
 #include <mpmc_ring_queue.h>
@@ -141,7 +141,6 @@ inline size_t mpmc_ring_queue_size(mpmc_ring_queue *q) {
 
 int mpmc_ring_queue_empty(mpmc_ring_queue *q) {
     size_t get_pos = __atomic_load_n(&q->get_pos, __ATOMIC_RELAXED);
-    q_msg_t *msg = &q->msgs[get_pos & q->capacity_mod];
     size_t seq = __atomic_load_n(&q->msgs[get_pos & q->capacity_mod].seq,
                                  __ATOMIC_RELAXED);
     return !(seq == get_pos + 1);
@@ -149,7 +148,6 @@ int mpmc_ring_queue_empty(mpmc_ring_queue *q) {
 
 int mpmc_ring_queue_full(mpmc_ring_queue *q) {
     size_t put_pos = __atomic_load_n(&q->put_pos, __ATOMIC_RELAXED);
-    q_msg_t *msg = &q->msgs[put_pos & q->capacity_mod];
     size_t seq = __atomic_load_n(&q->msgs[put_pos & q->capacity_mod].seq,
                                  __ATOMIC_RELAXED);
     return (seq != put_pos);

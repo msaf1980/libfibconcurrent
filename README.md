@@ -14,7 +14,7 @@ The `mpmc_ring_queue` module implements a lock-free, non-blocking MPMC bounded q
 * Multi-Producer, Multi Consumer (MPMC).
   Producers and consumers operate independently, but the operations are not
   lock-free, i.e., a enqueue may have to wait for a pending dequeue operation to finish and vice versa.
-* No dynamic memory allocates or frees during enqueue and dequeue operations.  Messages are stored as void pointers; _null pointers can be stored, but mpmc_ring_queue_dequeue return NULL when dequeued NULL or queue is epmty.
+* No dynamic memory allocates or frees during enqueue and dequeue operations.  Messages are stored as void pointers; _null pointers can be stored, but `mpmc_ring_queue_dequeue` return NULL when dequeued NULL or queue is epmty.
 
 ## Release Notes
 
