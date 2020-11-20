@@ -45,7 +45,7 @@ CTEST(mpmc_ring_queue_base, enqueue_dequeue) {
     void *v;
     q = mpmc_ring_queue_new(4, &qerr);
     ASSERT_EQUAL_D(QERR_OK, qerr, "queue_new must successed");
-    ASSERT_NOT_NULL_D(q, "queue msut be not NULL");
+    ASSERT_NOT_NULL_D(q, "queue must be not NULL");
 
     /* copy for compare memory */
     save_q = *q;
@@ -229,11 +229,6 @@ static void mpmc_ring_queue_seek(mpmc_ring_queue *q) {
     q->put_pos = 0;
     // q->get_pos = (size_t) -1;
     q->get_pos = n + q->capacity_mod;
-}
-
-/* check size_t overflow workaround on dequeue */
-CTEST(mpmc_ring_queue_size_max, overflow_enqueue) {
-    
 }
 
 typedef struct {
@@ -444,7 +439,7 @@ void mpmc_ring_queue_enqueue_dequeue(size_t q_size, size_t loops, unsigned write
             (unsigned long) test_data.deq_sum);
     }
 
-    ASSERT_EQUAL_D(QERR_OK, mpmc_ring_queue_destroy(test_data.q), "queue_delete");
+    ASSERT_EQUAL_D(QERR_OK, mpmc_ring_queue_destroy(test_data.q), "queue_destroy");
 
     printf("(%f ms, %lu iterations, %llu ns/op) ",
            ((double) end - (double) start) / 1000,
@@ -466,6 +461,10 @@ CTEST(mpmc_ring_queue_thread, enqueue6_dequeue4) {
 
 CTEST(mpmc_ring_queue_thread, enqueue4_dequeue6) {
     mpmc_ring_queue_enqueue_dequeue(32, 10000000, 4, 6, 0);
+}
+
+CTEST(mpmc_ring_queue_thread, enqueue6_dequeue6) {
+    mpmc_ring_queue_enqueue_dequeue(32, 10000000, 6, 6, 0);
 }
 
 int main(int argc, const char *argv[]) {

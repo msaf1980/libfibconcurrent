@@ -36,8 +36,5 @@ foreach(testFile ${testFiles})
              COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/test_${test})
 endforeach(testFile)
 
-# Build benchmarks
-if(SOURCES_TEST)
-    # add_library( test${PROJECT} STATIC ${SOURCES_TEST} )
-    list(APPEND BENCH_LIBRARIES test${PROJECT})
-endif()
+add_executable(bench_queue "queue_bench.c" "queue.c" ${REQUIRED_SOURCES})
+target_link_libraries(bench_queue ${TEST_LIBRARIES})
