@@ -167,3 +167,7 @@ size_t mpmc_ring_queue_free_relaxed(mpmc_ring_queue *q) {
     }
     return mpmc_ring_queue_size(q) - (put_pos - get_pos);
 }
+
+size_t mpmc_ring_queue_len_relaxed(mpmc_ring_queue *q) {
+    return mpmc_ring_queue_size(q) - mpmc_ring_queue_free_relaxed(q);
+}

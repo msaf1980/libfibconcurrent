@@ -63,10 +63,15 @@ int mpmc_ring_queue_full(mpmc_ring_queue *q);
  * q : Queue instance handle. */
 size_t mpmc_ring_queue_size(mpmc_ring_queue *q);
 
-/* Return queue free len. Not full consistent.
+/* Return queue free length. Not full consistent.
  * Also can return 0 if queue is full or capacity if queue is empthy due to paralell enqueue/dequeue.
  * q : Queue instance handle. */
 size_t mpmc_ring_queue_free_relaxed(mpmc_ring_queue *q);
+
+/* Return queue length. Not full consistent.
+ * Also can return 0 if queue is full or capacity if queue is empthy due to paralell enqueue/dequeue.
+ * q : Queue instance handle. */
+size_t mpmc_ring_queue_len_relaxed(mpmc_ring_queue *q);
 
 #ifdef __cplusplus
 }
