@@ -96,4 +96,4 @@ static inline void cpu_relax()
 #endif
 }
 
-#endif // _CONCURRENT_ARCH_H_
+#endif /* _CONCURRENT_ARCH_H_ */

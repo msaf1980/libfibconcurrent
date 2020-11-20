@@ -53,8 +53,8 @@ typedef void (*ctest_teardown_func)(void*);
 CTEST_IMPL_DIAG_PUSH_IGNORED(strict-prototypes)
 
 struct ctest {
-    const char* ssname;  // suite name
-    const char* ttname;  // test name
+    const char* ssname;  /* suite name */
+    const char* ttname;  /* test name */
     void (*run)();
 
     void* data;
@@ -125,7 +125,7 @@ CTEST_IMPL_DIAG_POP()
 
 
 void CTEST_LOG(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);
-void CTEST_ERR(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);  // doesn't return
+void CTEST_ERR(const char* fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);  /* doesn't return */
 
 #define CTEST(sname, tname) CTEST_IMPL_CTEST(sname, tname, 0)
 #define CTEST_SKIP(sname, tname) CTEST_IMPL_CTEST(sname, tname, 1)
@@ -256,14 +256,14 @@ static void vprint_errormsg(const char* const fmt, va_list ap) CTEST_IMPL_FORMAT
 static void print_errormsg(const char* const fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);
 
 static void vprint_errormsg(const char* const fmt, va_list ap) {
-    // (v)snprintf returns the number that would have been written
+    /* (v)snprintf returns the number that would have been written */
     const int ret = vsnprintf(ctest_errormsg, ctest_errorsize, fmt, ap);
     if (ret < 0) {
         ctest_errormsg[0] = 0x00;
     } else {
         const size_t size = (size_t) ret;
         const size_t s = (ctest_errorsize <= size ? size -ctest_errorsize : size);
-        // ctest_errorsize may overflow at this point
+        /* ctest_errorsize may overflow at this point */
         ctest_errorsize -= s;
         ctest_errormsg += s;
     }
@@ -491,7 +491,7 @@ void assert_d(const char* caller, int line, const char *descr) {
 }
 
 static int suite_all(struct ctest* t) {
-    (void) t; // fix unused parameter warning
+    (void) t; /* fix unused parameter warning */
     return 1;
 }
 
@@ -565,7 +565,7 @@ __attribute__((no_sanitize_address)) int ctest_main(int argc, const char *argv[]
 
     ctest_begin = &CTEST_IMPL_TNAME(suite, test);
     ctest_end = &CTEST_IMPL_TNAME(suite, test);
-    // find begin and end of section by comparing magics
+    /* find begin and end of section by comparing magics */
     while (1) {
         struct ctest* t = ctest_begin-1;
         if (t->magic != CTEST_IMPL_MAGIC) break;
@@ -603,7 +603,7 @@ __attribute__((no_sanitize_address)) int ctest_main(int argc, const char *argv[]
                     else
                         test->run();
                     if (test->teardown && *test->teardown) (*test->teardown)(test->data);
-                    // if we got here it's ok
+                    /* if we got here it's ok */
 #ifdef CTEST_COLOR_OK
                     color_print(ANSI_BGREEN, "[OK]");
 #else

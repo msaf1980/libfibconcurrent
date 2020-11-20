@@ -227,7 +227,6 @@ static void mpmc_ring_queue_seek(mpmc_ring_queue *q) {
     q->msgs[i].d = I2V 1;
     q->msgs[i].seq = n + i + 1;
     q->put_pos = 0;
-    // q->get_pos = (size_t) -1;
     q->get_pos = n + q->capacity_mod;
 }
 

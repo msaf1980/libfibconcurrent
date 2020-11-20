@@ -31,7 +31,7 @@ typedef struct {
     size_t deq_cnt;
     queue *q;
     size_t loops;
-    int verify; // disable check order (for multithread testing)
+    int verify; /* disable check order (for multithread testing) */
     pthread_barrier_t barrier;
 } tst_t;
 

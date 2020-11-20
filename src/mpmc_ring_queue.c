@@ -86,7 +86,7 @@ qerr_t mpmc_ring_queue_enqueue(mpmc_ring_queue *q, void *m) {
     put_pos = __atomic_load_n(&q->put_pos, __ATOMIC_RELAXED);
     for (;;) {
         msg = &q->msgs[put_pos & q->capacity_mod];
-        // this acquire-load synchronizes-with the release-store (2)
+        /* this acquire-load synchronizes-with the release-store (2) */
         seq = __atomic_load_n(&msg->seq, __ATOMIC_ACQUIRE);
         dif = (ssize_t) seq - (ssize_t) put_pos;
         if (dif == 0) {
