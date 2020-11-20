@@ -1,0 +1,25 @@
+script: ./ci/run_tests.sh
+language: c
+
+matrix:
+  include:
+    - compiler: gcc
+      os: linux
+      dist: trusty
+    - compiler: clang
+      os: linux
+      dist: trusty  
+    - compiler: gcc
+      os: linux
+      dist: xenial
+    - compiler: clang
+      os: linux
+      dist: xenial
+    - compiler: gcc
+      os: linux
+      dist: bionic
+    - compiler: clang
+      os: linux
+      dist: bionic
+    - compiler: clang
+      os: osx
