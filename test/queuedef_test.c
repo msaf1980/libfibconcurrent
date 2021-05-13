@@ -5,7 +5,7 @@
 #include <sys/time.h>
 #include <unistd.h>
 
-#include <queuedef.h>
+#include <concurrent/queuedef.h>
 
 #define CTEST_MAIN
 #define CTEST_SEGFAULT

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <queuedef.h>
+#include <concurrent/queuedef.h>
 
 /* This list of strings must be kept in sync with the
  * corresponding "QERR_*" constant definitions in "spsc_queue.h".

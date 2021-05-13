@@ -10,7 +10,7 @@
 #include "pthread_barrier.h"
 #endif
 
-#include <mpmc_ring_queue.h>
+#include <concurrent/mpmc_ring_queue.h>
 #include <mpmc_ring_queue_internal.h>
 
 #define CTEST_MAIN

@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "arch.h"
+#include <concurrent/arch.h>
 
 /* message element */
 struct q_msg_s {

@@ -19,7 +19,7 @@ set(BINDIR bin)
 # Override lib build dir with LIBDIR
 set(LIBDIR lib)
 
-set(DIR_DEP dep)
+set(DIR_INCLUDES include)
 set(DIR_SCRIPT cmake)
 set(DIR_PRESCRIPT cmake_pre)
 
@@ -47,7 +47,7 @@ endforeach(cmakeFile)
 
 if(DEFINED DIRS_INCLUDES)
     # Includes in separate directory, also include dependecies headers
-    include_directories(${DIRS_INCLUDES} ${DEP_INSTALL_DIR}/include)
+    include_directories(${DIRS_INCLUDES})
 endif()
 
 if(DEFINED ENV{DEVENV})

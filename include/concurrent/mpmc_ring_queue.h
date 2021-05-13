@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-#include <queuedef.h>
+#include <concurrent/queuedef.h>
 
 typedef struct mpmc_q_s mpmc_ring_queue; /* object type of queue instance */
 

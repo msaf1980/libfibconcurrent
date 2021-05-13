@@ -12,7 +12,7 @@
 
 #include "queue.h"
 
-#include <arch.h>
+#include <concurrent/arch.h>
 
 #define CTEST_MAIN
 #define CTEST_SEGFAULT

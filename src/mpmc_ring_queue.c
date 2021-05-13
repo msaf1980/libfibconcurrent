@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 #include "mpmc_ring_queue_internal.h"
-#include <mpmc_ring_queue.h>
+#include <concurrent/mpmc_ring_queue.h>
 
 #define QERR(p_qerr, qerr_n)                                                   \
     do {                                                                       \
