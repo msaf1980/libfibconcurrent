@@ -58,6 +58,7 @@ static inline void write_barrier()
     __asm__ __volatile__ ("" : : : "memory");
 #else
     #warn please define a write_barrier()
+    __sync_synchronize();
 #endif
 }
 
@@ -67,8 +68,8 @@ static inline void store_load_barrier()
 #if defined(ARCH_x86)
     __asm__ __volatile__ ("lock; addl $0,0(%%esp)" : : : "memory");
 #elif defined(ARCH_x86_64)
-    __asm__ __volatile__ ("lock; addq $0,0(%%rsp)" : : : "memory");
 #else
+    __asm__ __volatile__ ("lock; addq $0,0(%%rsp)" : : : "memory");
     #warn please define a store_load_barrier()
     __sync_synchronize();
 #endif
@@ -92,7 +93,8 @@ static inline void cpu_relax()
         "pause": : : "memory"
     );
 #else
-#warning no cpu_relax() defined for this architecture. please consider defining one if possible.
+    #warning no cpu_relax() defined for this architecture. please consider defining one if possible.
+    __sync_synchronize();
 #endif
 }
 
