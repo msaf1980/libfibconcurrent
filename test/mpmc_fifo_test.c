@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/mpmc_fifo.h>
+#include <fibconcurrent/mpmc_fifo.h>
 #include <stdint.h>
 #include <unistd.h>
 

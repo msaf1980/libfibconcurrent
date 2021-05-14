@@ -41,8 +41,8 @@
 
 #include <stddef.h>
 #include <assert.h>
-#include <concurrent/arch.h>
-#include <concurrent/machine_specific.h>
+#include <fibconcurrent/arch.h>
+#include <fibconcurrent/machine_specific.h>
 
 struct hazard_node;
 

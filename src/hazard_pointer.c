@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/hazard_pointer.h>
+#include <fibconcurrent/hazard_pointer.h>
 #include <assert.h>
 #include <string.h>
 #include <malloc.h>

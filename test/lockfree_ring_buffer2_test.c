@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/lockfree_ring_buffer.h>
+#include <fibconcurrent/lockfree_ring_buffer.h>
 
 #include <pthread.h>
 #if !HAVE_PTHREAD_BARRIER

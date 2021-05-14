@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <concurrent/arch.h>
+#include <fibconcurrent/arch.h>
 
 /* message element */
 struct q_msg_s {

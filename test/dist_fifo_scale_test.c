@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/dist_fifo.h>
+#include <fibconcurrent/dist_fifo.h>
 
 #include <stdlib.h>
 #include <sys/time.h>

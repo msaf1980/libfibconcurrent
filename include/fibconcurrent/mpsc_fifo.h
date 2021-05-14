@@ -28,7 +28,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include <concurrent/arch.h>
+#include <fibconcurrent/arch.h>
 
 typedef struct mpsc_fifo_node
 {

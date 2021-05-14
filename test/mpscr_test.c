@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/mpsc_relaxed_fifo.h>
+#include <fibconcurrent/mpsc_relaxed_fifo.h>
 
 #include <stdint.h>
 #include <unistd.h>

@@ -14,8 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/hazard_pointer.h>
-#include <concurrent/lockfree_ring_buffer.h>
+#include <fibconcurrent/hazard_pointer.h>
+#include <fibconcurrent/lockfree_ring_buffer.h>
 
 #include <pthread.h>
 #if !HAVE_PTHREAD_BARRIER

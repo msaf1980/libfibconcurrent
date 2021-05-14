@@ -29,7 +29,7 @@
 #include <stdint.h>
 #include <assert.h>
 
-#include <concurrent/arch.h>
+#include <fibconcurrent/arch.h>
 
 typedef struct wsd_circular_array_elem
 {

@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/work_stealing_deque.h>
+#include <fibconcurrent/work_stealing_deque.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>

@@ -30,7 +30,7 @@
 #include <malloc.h>
 #include <string.h>
 #include "hazard_pointer.h"
-#include <concurrent/arch.h>
+#include <fibconcurrent/arch.h>
 
 #define MPMC_HAZARD_COUNT (2)
 

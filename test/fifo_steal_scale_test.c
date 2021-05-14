@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/fifo_steal_buffer.h>
+#include <fibconcurrent/fifo_steal_buffer.h>
 
 #include <pthread.h>
 #if !HAVE_PTHREAD_BARRIER

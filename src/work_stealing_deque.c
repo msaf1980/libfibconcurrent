@@ -14,8 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/work_stealing_deque.h>
-#include <concurrent/machine_specific.h>
+#include <fibconcurrent/work_stealing_deque.h>
+#include <fibconcurrent/machine_specific.h>
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>

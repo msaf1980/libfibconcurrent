@@ -14,7 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/work_queue.h>
+#include <fibconcurrent/work_queue.h>
+#include <fibconcurrent/machine_specific.h>
 
 int work_queue_init(work_queue_t* wq)
 {

@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/mpmc_stack.h>
+#include <fibconcurrent/mpmc_stack.h>
 
 #include <stdint.h>
 #include <unistd.h>

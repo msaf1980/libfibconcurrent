@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <concurrent/spsc_fifo.h>
+#include <fibconcurrent/spsc_fifo.h>
 
 #include <stdint.h>
 #include <unistd.h>
