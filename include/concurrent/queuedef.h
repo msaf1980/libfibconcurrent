@@ -28,4 +28,7 @@ const char *queue_qerr_str(qerr_t qerr);
 /* Returns a size, rounded to power of 2 (if size lower than 2, return always 2) */
 size_t size_to_power_of_2(size_t q_size);
 
+
+typedef void (*free_func)(void *ptr);
+
 #endif /* __QUEUEDEF_H__ */

@@ -36,5 +36,5 @@ foreach(testFile ${testFiles})
              COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/test_${test})
 endforeach(testFile)
 
-add_executable(bench_queue "queue_bench.c" "queue.c" ${REQUIRED_SOURCES})
+add_executable(bench_queue "queue_bench.c" ${REQUIRED_SOURCES})
 target_link_libraries(bench_queue ${TEST_LIBRARIES})

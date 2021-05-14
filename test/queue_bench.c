@@ -10,7 +10,7 @@
 #include "pthread_barrier.h"
 #endif
 
-#include "queue.h"
+#include <concurrent/queue.h>
 
 #include <concurrent/arch.h>
 

@@ -37,7 +37,7 @@ qerr_t mpmc_ring_queue_destroy(mpmc_ring_queue *q);
 /* Delete an instance of a queue (call mpmc_ring_queue_destroy) and free all items before.
  * q : Queue instance handle.
  * Returns QERR_OK on success, or other QERR_* value on error. */
-qerr_t mpmc_ring_queue_delete(mpmc_ring_queue *q);
+qerr_t mpmc_ring_queue_delete(mpmc_ring_queue *q, free_func f);
 
 /* Add a message to the queue.
  * q : Queue instance handle.
