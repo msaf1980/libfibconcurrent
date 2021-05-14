@@ -26,10 +26,6 @@ set(DIR_PRESCRIPT cmake_pre)
 include(${CMAKE_SOURCE_DIR}/settings.cmake)
 include(${CMAKE_SOURCE_DIR}/options_init.cmake)
 
-if(NOT BUILD_SHARED_LIBS AND NOT BUILD_STATIC_LIBS)
-  message(FATAL_ERROR "Both BUILD_SHARED_LIBS and BUILD_STATIC_LIBS have been disabled")
-endif()
-
 # Include cmake prescript from cmake dir
 file(GLOB cmakeFiles ${DIR_PRESCRIPT}/*.cmake)
 foreach(cmakeFile ${cmakeFiles})
@@ -53,10 +49,6 @@ endif()
 if(DEFINED ENV{DEVENV})
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 endif()
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
 foreach(dir IN LISTS SUB_DIRS)
     message("ADD ${dir}")
